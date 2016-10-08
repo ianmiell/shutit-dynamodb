@@ -36,7 +36,7 @@ end''')
 		shutit.get_url('dynamodb_local_latest.tar.gz', ['http://dynamodb-local.s3-website-us-west-2.amazonaws.com'])
 		shutit.send('tar -zxvf dynamodb_local_latest.tar.gz')
 		shutit.send('cd dynamodb_local_latest')
-		shutit.send('java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb')
+		shutit.send('java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb &')
 
 		shutit.logout()
 		shutit.logout()
