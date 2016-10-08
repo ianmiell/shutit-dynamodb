@@ -33,9 +33,8 @@ end''')
 		shutit.login(command='sudo su -',password='vagrant')
 
 		shutit.install('openjdk-7-jre')
-		shutit.get_url('dynamodb_local_latest.tar.gz', ['http://dynamodb-local.s3-website-us-west-2.amazonaws.com'])
+		shutit.send('wget http://dynamodb-local.s3-website-us-west-2.amazonaws.com/dynamodb_local_latest.tar.gz')
 		shutit.send('tar -zxvf dynamodb_local_latest.tar.gz')
-		shutit.send('cd dynamodb_local_latest')
 		shutit.send('java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb &')
 
 		shutit.logout()
